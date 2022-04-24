@@ -41,22 +41,6 @@
             </div>
         </article>
     <br><br>
-      <article class="user_account">
-            <h2 align="center">Мои Дипломные работы</h2>
-            {% for morder in thesis %}
-             <div class="user_account_wrapper">
-                <div class="user">
-                    <div class="user_info">
-                        <p>Тема: {{ morder.name }} </p>
-                        <img src="{{ morder.photo.url  }}" width="200px">
-                        <p>Категория:{{ morder.category }}</p>
-                        <p>Был создан в:{{ morder.created_at }}</p>
-                        <p>Последний изменение:{{ morder.updated_at }}</p>
-                    </div>
-                </div>
-             </div>
-            {% endfor %}
-        </article>
          <article class="user_account">
             <h2 align="center">История Заказов</h2>
             {% for morder in order_item %}

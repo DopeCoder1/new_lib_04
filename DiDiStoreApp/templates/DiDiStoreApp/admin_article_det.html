@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="card-title">{{ thesis.name }}</h5>
       <img height="150px" src="{{ thesis.photo.url }}">
-    <p class="card-text">{{ thesis.desc|truncatechars:50 }}</p>
+    <p class="card-text">{{ thesis.desc }}</p>
     <a href="{% url 'admin_home' %}" class="btn btn-primary">На главную</a>
   </div>
   <div class="card-footer text-muted">

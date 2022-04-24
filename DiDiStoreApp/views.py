@@ -60,7 +60,7 @@ def student_index(request):
         "books":books,
         "cats":cats,
         "thesis_cats":thesis_cats,
-        "the_sis":thesis,
+        "thesis":thesis,
         "article_cats":article_cats,
     }
     return render(request,"DiDiStoreApp/student_index.html",context)

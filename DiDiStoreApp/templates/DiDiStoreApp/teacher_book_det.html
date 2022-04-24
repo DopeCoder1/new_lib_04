@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="card-title">{{ book.name }}</h5>
       <img height="150px" src="{{ book.photo.url }}">
-    <p class="card-text">{{ book.desc|truncatechars:50 }}</p>
+    <p class="card-text">{{ book.desc}}</p>
     <a href="{% url 'teacher_home' %}" class="btn btn-primary">На главную</a>
     <a href="{{ book.file.url }}" class="btn btn-primary">Скачать</a>
 
