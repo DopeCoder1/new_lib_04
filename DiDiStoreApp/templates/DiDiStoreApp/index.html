@@ -1,0 +1,97 @@
+{% extends 'DiDiStoreApp/base.html' %}
+{% load static %}
+{% block main %}
+<article class="book_content">
+    <div class="book_contanet_wrapper">
+    <h2 align="left">Книги:</h2><br>
+        <div class="book_section">
+            {% for j in books %}
+            <div class="book">
+                <div class="book_img_title">
+                    <img src="{{ j.photo.url }} " height="200px"  alt="faiman" class="book_img">
+                    <p class="book_title">{{j.name}}</p>
+                </div>
+                <div class="btn_price_rating" >
+                    <a style="color: black;" class="buy_btn" href="{% url 'detail' j.id %}">
+                    Посмотреть книгу
+                    </a>
+{#                       <button class="buy_btn" id ="show_modal_window">Купить</button>#}
+                </div>
+            </div>
+              {% endfor %}
+        </div>
+    <br><br><br>
+
+    <h2 align="left">Дипломные:</h2><br>
+    <div class="book_section">
+            {% for j in thesis %}
+            <div class="book">
+                <div class="book_img_title">
+                    <img src="{{ j.photo.url }} " height="200px"  alt="faiman" class="book_img">
+                    <p class="book_title">{{j.name}}</p>
+                </div>
+                <div class="btn_price_rating" >
+                    <a style="color: black;" class="buy_btn" href="{% url 'detail_thesis' j.id %}">
+                    Посмотреть дипломную
+                    </a>
+                </div>
+            </div>
+              {% endfor %}
+        </div>
+    <br><br><br>
+        <h2 align="left">Статьи:</h2><br>
+     <div class="book_section">
+            {% for j in article %}
+            <div class="book">
+                <div class="book_img_title">
+                    <img src="{{ j.photo.url }} " height="200px"  alt="faiman" class="book_img">
+                    <p class="book_title">{{j.name}}</p>
+                </div>
+                <div class="btn_price_rating" >
+                    <a href="{% url 'detail_article' j.id %}" style="color: black;" class="buy_btn">
+                    Посмотреть статью
+                    </a>
+                </div>
+            </div>
+              {% endfor %}
+        </div>
+        <div class="background book_modal_window">
+            <div class="book_modal_window_wrapper modal_window_wrapper">
+                <p class="cose_btn close_windows" id="hide_modal_window">закрыть</p>
+                <div class = "mw_title_desc">
+                    <div class="book_img_title">
+                        <img src="{% static 'DiDiStoreApp/images/faiman.png' %}" alt="book" class="mw_book_img">
+                        <p class="mw_book_title"></p>
+                    </div>
+                    <div class="book_desc">
+                        <h1 class="desc_title">Описание книги</h1>
+                        <p class="desc_text">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            Itl was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+                <div class="price_counter_rating">
+                    <div class="price_counter">
+                        <span class="book_counter">
+                            <button class="counter_btn">+</button>
+                            <p class="counter_sum">Кол-во книг: 1 | 2500тг</p>
+                        </span>
+                        <span class="mw_action_btns">
+                            <i class="fa-solid fa-bag-shopping bag" title="добавить в желаемое"></i>
+                            <button class="mw_buy_btn">Купить</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</article>
+
+{% endblock %}

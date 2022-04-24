@@ -1,0 +1,81 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'DiDiStoreApp/css/style.css' %}">
+
+	</head>
+	<body>
+
+	<section class="ftco-section">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Отчёт по Заказам</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+
+						<table class="table table-bordered table-dark table-hover">
+						  <thead>
+						    <tr>
+						      <th>#</th>
+						      <th>ФИО</th>
+						      <th>Книга</th>
+						      <th>Номер Транзакции</th>
+						      <th>Дата Cозданий</th>
+						      <th>Дата последней изменений </th>
+						      <th>Статус </th>
+						    </tr>
+						  </thead>
+                            {% for j in order_item %}
+						  <tbody>
+						    <tr>
+						      <th scope="row">{{ j.id }}</th>
+						      <td>{{ j.order.customer.first_name }} {{ j.order.customer.last_name }}</td>
+						      <td>{{ j.book }}</td>
+						      <td>{{ j.order.transaction_id }}</td>
+						      <td>{{ j.order.created }}</td>
+						      <td>{{ j.order.updated }}</td>
+                                  {% if j.order.status == True %}
+                                <td>
+                                    Подтвержден
+                                </td>
+                                {% else %}
+                                    <td>В Процессе</td>
+                                {% endif %}
+						    </tr>
+						  </tbody>
+			{% endfor %}
+						</table>
+                    <P align="center">Общая количество подтвержденных заказов:{{ count_order_item_status }}</P>
+                    <P align="center">Общая количество заказов:{{ order_order_item_book }}</P>
+                    <P align="center">Общая количество книг:{{ count_order_item }}</P>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+	<script src="{% static 'DiDiStoreApp/js/jquery.min.js'%}"></script>
+  <script src="{% static 'DiDiStoreApp/js/popper.js'%}"></script>
+  <script src="{% static 'DiDiStoreApp/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'DiDiStoreApp/js/main.js'%}"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,68 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
+    <title>DiDi | {{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_mini_nav">
+            <div class="mini_nav_wrapper">
+                <nav class="mini_navigation">
+                    <ul class="mini_nav_list">
+                        <li class="mini_nav_links"><a href="{% url 'home' %}">Главная</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'cart_details' %}">Заказы</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="mini_nav_links"><a href="{% url 'exit' %}">Выйти</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article class="user_account">
+            <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_avatar">
+                        <img  class="fa-solid fa-user avatar_img" src="{{ profile.photo.url }}" height="200px">
+                        <p class="avatar_name">{{profile.user.first_name}} {{profile.user.last_name}}</p>
+                    </div>
+                    <div class="user_info">
+                        <p>Почта: {{ profile.user.email }}</p>
+                        <p>Логин: {{ profile.user.username }}</p>
+{#                        <p>Кол-во копленных документов: {{ profile.books.count}}</p>#}
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    <br><br>
+         <article class="user_account">
+            <h2 align="center">История Заказов</h2>
+            {% for morder in myorder %}
+             <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_info">
+                        <p>Оплата:{{ morder.payable }}</p>
+                        <p>Номер Заказа:{{ morder.totalbook }}</p>
+                        <p>Статус:</p>{% if morder.status == True %}
+                        <p>Confirmed</p>
+                            {% else %}
+                            <p>Processing</p>
+                        {% endif %}
+                        <p>Дата Заказа:{{ morder.created }}</p>
+
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </article>
+
+    </div>
+    <script src="{% static 'DiDiStoreApp/js/animation.js' %}"></script>
+</body>
+</html>

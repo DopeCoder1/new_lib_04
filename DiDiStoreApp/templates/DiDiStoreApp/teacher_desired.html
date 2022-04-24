@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_mini_nav">
+            <div class="mini_nav_wrapper">
+                <nav class="mini_navigation">
+                    <ul class="mini_nav_list">
+                        <li class="mini_nav_links"><a href="{% url 'teacher_home' %}">Главная</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'teacher_userpage' %}">Личный кабинет</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <h1 align="center">Мои заказы</h1>
+        <article class="desired">
+            <div class="desired_wrapper">
+                <ul class="desired_list">
+                    {% for j in cart %}
+                        {% with book=j.book  %}
+                    <li>
+
+                        <div class="desired_book">
+                            <img width="120px" src="{{ book.photo.url }}" alt="book" class="desired_book_img">
+                            <p class="desired_book_title">{{ book.author }} | {{ book.name }}</p>
+                        </div>
+                        <div class="action_btn_counter">
+                            <span class="desired_book_counter">
+                                <button class="desired_counter_btn"><a  class="desired_counter_btn" href="{% url 'teacher_cart_add' bookid=book.id %}">+</a></button>
+                                <p class="desired_counter_sum">Кол-во: {{ j.quantity}} </p>
+                            </span>
+                            <span class="action_btns">
+                                <button class="desired_remove_btn"><a class="desired_remove_btn" href="{% url 'teacher_cart_remove' bookid=book.id %}">Удалить</a></button>
+                                <a href="{% url 'teacher_order_create' %}"><button class="desired_buy_btn">Заказать</button></a>
+                            </span>
+                        </div>
+                    </li>
+                        {% endwith %}
+                        {% endfor %}
+
+
+                </ul>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+</html>

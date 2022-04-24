@@ -1,0 +1,58 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
+    <title>Teacher account {{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_mini_nav">
+            <div class="mini_nav_wrapper">
+                <nav class="mini_navigation">
+                    <ul class="mini_nav_list">
+                        <li class="mini_nav_links"><a href="{% url 'admin_home' %}">Главная</a></li>
+                        {#                        <li class="mini_nav_links"><a href="{% url 'student_cart_detail' %}">Заказы</a></li>#}
+{#                        <li class="mini_nav_links"><a href="{% url 'student_create_thesis' %}">Добавить Дипломную работу</a></li>#}
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article class="user_account">
+        <form>
+
+        </form>
+            <div class="user_account_wrapper">
+                   <h2 align="center">Список Студентов</h2><br>
+           <a href="{% url 'admin_create_other' %}"><h2 align="center">Добавить нововго студента</h2></a>
+                {% for stud in students %}
+                <div class="user">
+
+                    <div class="user_avatar">
+                        <img  class="fa-solid fa-user avatar_img" src="{{ stud.photo.url }}" height="200px">
+                        <p class="avatar_name">{{stud.user.first_name}} {{stud.user.last_name}}</p>
+                    </div>
+                    <div class="user_info">
+                        <p>Почта: {{stud.user.email }}</p>
+                        <p>Логин: {{ stud.user.username }}</p>
+                        <p>Адрес: {{ stud.address }}</p>
+                        <a href="{% url 'admin_del_other' stud.user.id %}"><p>Удалить?</p></a>
+
+                        {#                        <p>Кол-во копленных документов: {{ profile.books.count}}</p>#}
+                    </div>
+                <br>
+                </div>
+                    <br><br>
+                {% endfor %}
+
+            </div>
+        </article>
+    </div>
+    <script src="{% static 'DiDiStoreApp/js/animation.js' %}"></script>
+</body>
+</html>

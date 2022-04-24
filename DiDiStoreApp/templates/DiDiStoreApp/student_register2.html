@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student-Register</title>
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/register.css' %}">
+</head>
+<body>
+<form method="POST" class='form' enctype="multipart/form-data">
+     {% csrf_token %}
+  <div class='control'>
+    <h1>
+      Добавление профиля
+    </h1>
+  </div>
+    <div class='control block-cube block-input'>
+    {{ form.photo }}
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+    <div class='control block-cube block-input'>
+    {{ form.address }}
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+     <button class='btn block-cube block-cube-hover' type='submit'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Заполнить
+    </div>
+  </button>
+
+  <button class='btn block-cube block-cube-hover' type='button'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+        <a style="color: white; text-decoration: none;" href="{% url 'teacher_registration' %}">Регистрация учителя</a>
+    </div>
+  </button>
+    <button class='btn block-cube block-cube-hover' type='button'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+        <a style="color: white; text-decoration: none;" href="{% url 'login' %}">Войти(Если есть аккаунт)</a>
+    </div>
+  </button>
+</form>
+
+</body>
+</html>

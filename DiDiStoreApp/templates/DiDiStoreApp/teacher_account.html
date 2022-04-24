@@ -1,0 +1,122 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
+    <title>Teacher account {{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_mini_nav">
+            <div class="mini_nav_wrapper">
+                <nav class="mini_navigation">
+                    <ul class="mini_nav_list">
+                        <li class="mini_nav_links"><a href="{% url 'teacher_home' %}">Главная</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'teacher_addbook' %}">Создать Книгу</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'teacher_thesis_create' %}">Создать Дипломную работу</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'teacher_showstudent' %}">Список студентов</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'teacher_article_create' %}">Создать Статью</a></li>
+
+                        {#                        <li class="mini_nav_links"><a href="{% url 'student_cart_detail' %}">Заказы</a></li>#}
+{#                        <li class="mini_nav_links"><a href="{% url 'student_create_thesis' %}">Добавить Дипломную работу</a></li>#}
+                        <li class="mini_nav_links"><a href="{% url 'exit' %}">Выйти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article class="user_account">
+            <div class="user_account_wrapper">
+                   <h2 align="center">Личный кабинет</h2>
+                <div class="user">
+                    <div class="user_avatar">
+                        <img  class="fa-solid fa-user avatar_img" src="{{ profile.photo.url }}" height="200px">
+                        <p class="avatar_name">{{profile.user.first_name}} {{profile.user.last_name}}</p>
+                    </div>
+                    <div class="user_info">
+                        <p>Почта: {{profile.user.email }}</p>
+                        <p>Логин: {{ profile.user.username }}</p>
+{#                        <p>Кол-во копленных документов: {{ profile.books.count}}</p>#}
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    <br><br><br>
+    <br><br><br>
+      <article class="user_account">
+            <h2 align="center"><a href="{% url 'teacher_report_thesis' %}">Мои Дипломные:</a></h2>
+            {% for morder in thesis %}
+             <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_info">
+                        <p>Тема: {{ morder.name }} </p>
+                        <p>Категория:{{ morder.category }}</p>
+                        <p>Был создан в:{{ morder.created_at }}</p>
+                        <p>Последний изменение:{{ morder.updated_at }}</p>
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </article>
+    <article class="user_account">
+        <h2 align="center"><a href="{% url 'teacher_report_article' %}">Мои Статьи:</a></h2>
+            {% for morder in article %}
+             <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_info">
+                        <p>Название: {{ morder.name }} </p>
+                        <p>Категория:{{ morder.category }}</p>
+                        <p>Дата Заказа:{{ morder.created_at }}</p>
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </article>
+    <br><br><br>
+        <article class="user_account">
+            <h2 align="center"><a href="{% url 'teacher_report_book' %}">Мои Книги:</a></h2>
+            {% for morder in book %}
+             <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_info">
+                        <p>Название: {{ morder.name }} </p>
+                        <p>Категория:{{ morder.category }}</p>
+                        <p>Автор:{{ morder.author }}</p>
+                        <p>Дата Заказа:{{ morder.created_at }}</p>
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </article>
+    <br><br><br>
+        <article class="user_account">
+        <br>
+        <br>
+        <br>
+                       <h2 align="center"><a href="{% url 'teacher_report_order' %}">Мои Заказы:</a></h2>
+            {% for morder in order_item %}
+             <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_info">
+                        <p>Название: {{ morder.book }} </p>
+                        <p>Номер Заказа:{{ morder.order.id }}</p>
+                        <p>Статус:</p>{% if morder.status == True %}
+                        <p>Confirmed</p>
+                            {% else %}
+                            <p>Processing</p>
+                        {% endif %}
+                        <p>Дата Заказа:{{ morder.order.created }}</p>
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </article>
+
+    </div>
+    <script src="{% static 'DiDiStoreApp/js/animation.js' %}"></script>
+</body>
+</html>

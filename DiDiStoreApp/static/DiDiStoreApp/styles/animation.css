@@ -1,0 +1,37 @@
+
+.search_line_open{
+    width: 240px;
+}
+.search_form_animation{
+    animation-name: search_animation;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    
+}
+@keyframes search_animation{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+
+    }
+    
+}
+
+
+.show_window{
+    display: block;
+}
+.hide_window{
+    display: none;
+}
+
+.registration_window_sign_in{
+    padding-top: 116px;
+}

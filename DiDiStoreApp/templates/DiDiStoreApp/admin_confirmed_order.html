@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'DiDiStoreApp/css/style.css' %}">
+
+	</head>
+	<body>
+
+	<section class="ftco-section">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Потвердить Заказы</h2>
+					<a href="{% url 'admin_userpage' %}"><h3 class="heading-section">Назад</h3></a>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+
+						<table class="table table-bordered table-dark table-hover">
+						  <thead>
+						    <tr>
+						      <th>#</th>
+						      <th>ФИО</th>
+						      <th>Количество</th>
+						      <th>Дата Cозданий</th>
+						      <th>Дата последней изменений </th>
+						      <th>Номер Аккаунта </th>
+						    </tr>
+						  </thead>
+                            {% for j in orders %}
+
+						 <tbody>
+						    <tr>
+						      <th scope="row"><a href="{% url 'admin_create_order_edit' j.id %}">{{ j.id }}</a></th>
+						      <td>{{ j.customer.first_name }} {{ j.customer.last_name }}</td>
+						      <td>{{ j.totalbook }}</td>
+						      <td>{{ j.created }}</td>
+						      <td>{{ j.updated }}</td>
+						      <td>{{ j.account_no }}</td>
+						    </tr>
+						  </tbody>
+			{% endfor %}
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'DiDiStoreApp/js/jquery.min.js'%}"></script>
+  <script src="{% static 'DiDiStoreApp/js/popper.js'%}"></script>
+  <script src="{% static 'DiDiStoreApp/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'DiDiStoreApp/js/main.js'%}"></script>
+
+	</body>
+</html>
+

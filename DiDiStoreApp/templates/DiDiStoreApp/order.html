@@ -1,0 +1,11 @@
+{% extends 'DiDiStoreApp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block main %}
+    <h2 class="registration_title">Оформление Заказа:</h2>
+                    <form action="#" method="POST" class="registration_forms">
+                        {% csrf_token %}
+			          {{ form.as_p }}
+                    <button type="submit">Отправить</button>
+                    </form>
+{% endblock %}

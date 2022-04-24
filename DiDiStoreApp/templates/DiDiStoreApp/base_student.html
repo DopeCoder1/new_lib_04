@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/animation.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
+    <title>Student{{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_navigation">
+            <div class="header_wrapper">
+                <nav class="header_navigation">
+                    <ul class="header_navigation_list left_side_navigation">
+                        <li><a href="{% url 'student_home' %}"  class="naviagtion_links">Главная</a></li>
+                        <li><a href="{% url 'student_userpages' %}"  class="naviagtion_links">Личный кабинет</a></li>
+                        <li class="naviagtion_links" id="show_categories">Категории</li>
+                    </ul>
+                </nav>
+                 <p class="header_logo"><img width="400px" src="{% static 'DiDiStoreApp/images/logo_2.png' %}"></p>
+                <nav class="header_navigation">
+                    <ul class="header_navigation_list right_side_navigation">
+                        <li class="search_line">
+                            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+                            <form action="{% url 'searches' %}"  method="get" class="search_form">
+                                <input type="search" name="search"  id="sreach" placeholder="Автор, назваие, ISBN" class="search_input">
+                                <input type="submit" value="поиск" class="search_submit">
+                            </form>
+                            <li>
+                            <a href="{% url 'student_cart_detail' %}" class="naviagtion_links">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </a>
+                        </li>
+                        </li>
+                        {% if not request.user.is_authenticated %}
+                        <a style="color: white;" href="{% url 'student_registration' %}"><i class="fa-solid fa-user"></i></a>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article class="background category_window">
+            <div class="container">
+                <div class="category_wrapper">
+                    <p class="close_btn" id="hide_categories">Закрыть</p>
+<h2 class="category_title">Книги</h2>
+                {% for j in cats %}
+                    <section class="category_section">
+                        <div class="categories">
+                            <nav class="general_categories">
+                                <a href="{% url 'student_show_category_book' j.id %}" class="category_links">{{ j.name }}</a>
+                            </nav>
+                        </div>
+                    </section>
+{% endfor %}
+  <h2 class="category_title">Дипломные</h2>
+                {% for sis in thesis_cats %}
+                    <section class="category_section">
+                        <div class="categories">
+                            <nav class="general_categories">
+                                <a href="{% url 'student_show_category_thesis' sis.id %}" class="category_links">{{ sis.name }}</a>
+                            </nav>
+                        </div>
+                    </section>
+ {% endfor %}
+                <h2 class="category_title">Статьи</h2>
+                {% for sis in article_cats %}
+                    <section class="category_section">
+                        <div class="categories">
+                            <nav class="general_categories">
+                                <a href="{% url 'student_show_category_article' sis.id %}" class="category_links">{{ sis.name }}</a>
+                            </nav>
+                        </div>
+                    </section>
+ {% endfor %}
+                </div>
+            </div>
+        </article>
+        <article class="background registration_window">
+            <div class="registration_wrapper modal_window_wrapper">
+                <p class="close_btn close_windows" id="hide_registrations">закрыть</p>
+                <div class="sign_up">
+                    <h2 class="registration_title">Регистрация</h2>
+                    <form action="#" method="POST" class="registration_forms">
+                        {% csrf_token %}
+                        <fieldset class="form_field">
+                            <label for="name" class="registartion_input_titels">Имя:</label>
+                            {{ forms.name }}
+                        </fieldset>
+                        <fieldset class="form_field">
+                            <label for="email" class="registartion_input_titels">Email:</label>
+                            {{ forms.email}}
+                        </fieldset>
+                        <fieldset class="form_field">
+                            <label for="surname" class="registartion_input_titels">Логин:</label>
+                           {{ forms.username }}
+                        </fieldset>
+                        <fieldset class="form_field">
+                            <label for="pass" class="registartion_input_titels">Пароль:</label>
+                            {{ forms.password1 }}
+                        </fieldset>
+                        <fieldset class="form_field">
+                            <label for="pass" class="registartion_input_titels">Пароль 2:</label>
+                             {{ forms.password2 }}
+                        </fieldset>
+                        <input type="submit" value="Регистрация" class="registration_inputs registartion_btn">
+                    </form>
+                </div>
+                <div class="sign_in">
+                    <h2 class="registration_title">Войти</h2>
+                    <form action="#" method="POST" class="registration_forms">
+                        {% csrf_token %}
+                        <fieldset class="form_field">
+                            <label for="email" class="registartion_input_titels">Почта:</label>
+                            {{ form.username }}
+                        </fieldset>
+                        <fieldset class="form_field">
+                            <label for="pass" class="registartion_input_titels">Пароль:</label>
+                            {{ form.password }}
+                        </fieldset>
+                        <input type="submit" value="Вход" class="registration_inputs registartion_btn">
+                    </form>
+                </div>
+                <div class="ch_reg_forms">
+                    <button class="ch_registration_form" id="#sign_up">Регистрация</button>
+                    <button class="ch_registration_form" id="#sign_in">Войти</button>
+                </div>
+            </div>
+
+
+
+        </article>
+
+
+
+
+        {% block main %}
+        {% endblock %}
+
+        <footer class="footer">
+            <div class="footer_wrapper">
+                <section class="socialn_navigation footer_general_layout">
+                    <div class="payments_categories footer_general_layout">
+
+
+                    </div>
+                    <div class="contacts_socialn">
+                        <nav class="contacts">
+                            <ul class="contact_list">
+                                <li>телефон 1: 8 707 00000</li>
+                                <li>телефон 2: 8 707 00000</li>
+                                <li>г. Алматы, улица Сатпаева 27</li>
+                            </ul>
+                        </nav>
+                        <nav class="social_networks ">
+                            <ul class="socialn_list">
+                                <li class="socialn_links" title="instagram"><a href="https://fontawesome.com/v5/icons/camera-polaroid?s=solid" target="_blank"><i class="fas fa-camera-retro"></i></a></li>
+                                <li class="socialn_links" title="telegram"><a href="#" target="_blank"><i class="fa-solid fa-paper-plane"></i></a></li>
+                                <li class="socialn_links" title="youtube"><a href="https://www.youtube.com/watch?v=XvJeAXOUjY4&t=8s" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li class="socialn_links" title="twitter"><a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </section>
+                <p class="copyright">copyright © 2022</p>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'DiDiStoreApp/js/animation.js' %}"></script>
+</body>
+</html>

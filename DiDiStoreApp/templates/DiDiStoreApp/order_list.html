@@ -1,0 +1,48 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
+    <title>DiDi | {{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_mini_nav">
+            <div class="mini_nav_wrapper">
+                <nav class="mini_navigation">
+                    <ul class="mini_nav_list">
+                        <li class="mini_nav_links"><a href="{% url 'home' %}">Главная</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'cart_details' %}">Желаемое</a></li>
+                        <li class="mini_nav_links"><a href="{% url 'exit' %}">Выйти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article class="user_account">
+            <h2 align="center">Спасибо за покупку:)</h2>
+            {% for morder in myorder %}
+             <div class="user_account_wrapper">
+                <div class="user">
+                    <div class="user_info">
+                        <p>Оплата:{{ morder.payable }}</p>
+                        <p>Номер Заказа:{{ morder.totalbook }}</p>
+                        <p>Статус:</p>{% if morder.paid == True %}
+                        <p>Confirmed</p>
+                            {% else %}
+                            <p>Processing</p>
+                        {% endif %}
+                        <p>Дата Заказа:{{ morder.created }}</p>
+
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </article>
+    </div>
+    <script src="{% static 'DiDiStoreApp/js/animation.js' %}"></script>
+</body>
+</html>
