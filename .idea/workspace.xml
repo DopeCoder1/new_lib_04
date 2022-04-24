@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3ec4861c-4720-4713-ad5e-19dd4243d338" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/DiDi_beta-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DiDiStore-main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/admin_article_det.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/admin_article_det.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/admin_detail_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/admin_detail_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/admin_detail_thesis.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/admin_detail_thesis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_article_det.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_article_det.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_book_det.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_book_det.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_thesis_det.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/student_thesis_det.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/teacher_article_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/teacher_article_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/teacher_book_det.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/teacher_book_det.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/teacher_thesis_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/teacher_thesis_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/thesisdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/thesisdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28EUXwJBu6Us4cqY0RRcixbMvMh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DiDi_beta-master" type="Python.DjangoServer" factoryName="Django server">
+      <module name="DiDi_beta-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ec4861c-4720-4713-ad5e-19dd4243d338" name="Changes" comment="" />
+      <created>1650781282780</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650781282780</updated>
+      <workItem from="1650781283906" duration="2626000" />
+      <workItem from="1650785499821" duration="449000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
