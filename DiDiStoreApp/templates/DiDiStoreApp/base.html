@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{% static 'DiDiStoreApp/styles/all.css' %}">
     <title>Anonym</title>
 </head>
-<body>
+<body  style="background: url('{% static "DiDiStoreApp/images/bgs.jpg" %}')">
     <div class="container">
-        <header class="header_navigation">
+        <header style="position: sticky; top: 0;" class="header_navigation">
             <div class="header_wrapper">
                 <nav class="header_navigation">
                     <ul class="header_navigation_list left_side_navigation">
@@ -23,11 +23,11 @@
                  <p class="header_logo"><img width="400px" src="{% static 'DiDiStoreApp/images/logo_2.png' %}"></p>
                 <nav class="header_navigation">
                     <ul class="header_navigation_list right_side_navigation">
-                            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
-                            <form action="" method="get" class="search_form">
-                                <input type="text" name="search" id="search" placeholder="Автор, назваие, ISBN" class="search_input">
-                                                                <input type="submit" value="поиск" class="search_submit">
-                            </form>
+
+{#                            <form action="" method="get" class="search_form">#}
+{#                                <input type="text" name="search" id="search" placeholder="Автор, назваие, ISBN" class="search_input">#}
+{#                                                                <input type="submit" value="поиск" class="search_submit">#}
+{#                            </form>#}
 
                      {% if request.user.is_authenticated %}
                         <li id="show_registrations"><a style="color: white;" href="{% url 'exit' %}"><i class="fas fa-portal-exit"></i></a></li>

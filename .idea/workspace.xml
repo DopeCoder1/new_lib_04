@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ec4861c-4720-4713-ad5e-19dd4243d338" name="Changes" comment="" />
+    <list default="true" id="3ec4861c-4720-4713-ad5e-19dd4243d338" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base_teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiDiStoreApp/templates/DiDiStoreApp/base_teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +66,11 @@
       <option name="presentableId" value="Default" />
       <updated>1650781282780</updated>
       <workItem from="1650781283906" duration="2626000" />
-      <workItem from="1650785499821" duration="972000" />
+      <workItem from="1650785499821" duration="3034000" />
+      <workItem from="1650818224295" duration="15000" />
+      <workItem from="1651123479304" duration="315000" />
+      <workItem from="1651127297838" duration="112000" />
+      <workItem from="1651667865374" duration="2978000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1650786037131</created>
@@ -75,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650786071937</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit">
+      <created>1650786480741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650786480741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
